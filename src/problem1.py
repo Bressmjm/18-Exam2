@@ -758,6 +758,7 @@ def problem1d(strings):
         if is_prime(len(strings[k])) == True:
             return strings[k]
     return -1
+    
 
     """
     What comes in:
