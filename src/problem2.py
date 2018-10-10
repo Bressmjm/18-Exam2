@@ -110,7 +110,7 @@ def main():
     print(' to run the testing code as you complete the TODOs.')
 
     run_test_problem2a()
-    # run_test_problem2b()
+    run_test_problem2b()
 
 
 def run_test_problem2a():
@@ -342,6 +342,14 @@ def run_test_problem2b():
 # of the Triangle class (at the top of this file) for a useful method.
 # -----------------------------------------------------------------------------
 def problem2b(triangles):
+    totalarea = 0
+    if len(triangles) == 0:
+        return 0
+    else:
+        for k in range(len(triangles)):
+            triangle = triangles[k]
+            totalarea = totalarea + triangle.get_area()
+    return totalarea
     """
     What comes in:  a sequence of Triangle objects (which could be empty)
       (where the   Triangle   class is defined above).
@@ -362,7 +370,7 @@ def problem2b(triangles):
       :rtype: int | float
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # IMPORTANT: See the HINT just before the DEF of this function.
     # -------------------------------------------------------------------------
