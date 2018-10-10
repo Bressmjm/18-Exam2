@@ -27,7 +27,7 @@ def main():
 
     run_test_init()
     run_test_rain()
-    #run_test_get_total_rain_amount()
+    run_test_get_total_rain_amount()
     #run_test_merge_cloud()
 
 
@@ -50,6 +50,7 @@ class Cloud(object):
             self.water = capacity
         else:
             self.water = water
+        self.totalrain = 0
         """
         What comes in:
           -- capacity, a number representing the maximum amount of water
@@ -89,9 +90,11 @@ class Cloud(object):
         self.rain_amount = rain_amount
         if rain_amount > self.water:
             self.water = 0
+            self.totalrain = self.totalrain + beginingwater
             return beginingwater
         else:
             self.water = self.water - rain_amount
+            self.totalrain = self.totalrain + rain_amount
             return self.rain_amount
         """
         What comes in:
@@ -135,11 +138,12 @@ class Cloud(object):
           :rtype: int | float
         """
         # ---------------------------------------------------------------------
-        # TODO: 3. Implement and test this method.
+        # Done: 3. Implement and test this method.
         # ---------------------------------------------------------------------
 
 
     def get_total_rain_amount(self):
+        return self.totalrain
         """
         What comes in:
           -- self
@@ -169,7 +173,7 @@ class Cloud(object):
           :rtype: int | float
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. Implement and test this method.
+        # Done: 4. Implement and test this method.
         # ---------------------------------------------------------------------
 
 
